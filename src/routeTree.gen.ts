@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CampusChaosRouteImport } from './routes/campus-chaos'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as IntegralglobalsRouteImport } from './routes/integralglobals'
+import { Route as LeadershipRouteImport } from './routes/leadership'
+import { Route as MusicRouteImport } from './routes/music'
+import { Route as TutoringRouteImport } from './routes/tutoring'
+import { Route as WritingRouteImport } from './routes/writing'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampusChaosRoute = CampusChaosRouteImport.update({
+  id: '/campus-chaos',
+  path: '/campus-chaos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntegralglobalsRoute = IntegralglobalsRouteImport.update({
+  id: '/integralglobals',
+  path: '/integralglobals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadershipRoute = LeadershipRouteImport.update({
+  id: '/leadership',
+  path: '/leadership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MusicRoute = MusicRouteImport.update({
+  id: '/music',
+  path: '/music',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TutoringRoute = TutoringRouteImport.update({
+  id: '/tutoring',
+  path: '/tutoring',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WritingRoute = WritingRouteImport.update({
+  id: '/writing',
+  path: '/writing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/campus-chaos': typeof CampusChaosRoute
+  '/contact': typeof ContactRoute
+  '/integralglobals': typeof IntegralglobalsRoute
+  '/leadership': typeof LeadershipRoute
+  '/music': typeof MusicRoute
+  '/tutoring': typeof TutoringRoute
+  '/writing': typeof WritingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/campus-chaos': typeof CampusChaosRoute
+  '/contact': typeof ContactRoute
+  '/integralglobals': typeof IntegralglobalsRoute
+  '/leadership': typeof LeadershipRoute
+  '/music': typeof MusicRoute
+  '/tutoring': typeof TutoringRoute
+  '/writing': typeof WritingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/campus-chaos': typeof CampusChaosRoute
+  '/contact': typeof ContactRoute
+  '/integralglobals': typeof IntegralglobalsRoute
+  '/leadership': typeof LeadershipRoute
+  '/music': typeof MusicRoute
+  '/tutoring': typeof TutoringRoute
+  '/writing': typeof WritingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/campus-chaos'
+    | '/contact'
+    | '/integralglobals'
+    | '/leadership'
+    | '/music'
+    | '/tutoring'
+    | '/writing'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/campus-chaos'
+    | '/contact'
+    | '/integralglobals'
+    | '/leadership'
+    | '/music'
+    | '/tutoring'
+    | '/writing'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/campus-chaos'
+    | '/contact'
+    | '/integralglobals'
+    | '/leadership'
+    | '/music'
+    | '/tutoring'
+    | '/writing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CampusChaosRoute: typeof CampusChaosRoute
+  ContactRoute: typeof ContactRoute
+  IntegralglobalsRoute: typeof IntegralglobalsRoute
+  LeadershipRoute: typeof LeadershipRoute
+  MusicRoute: typeof MusicRoute
+  TutoringRoute: typeof TutoringRoute
+  WritingRoute: typeof WritingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-chaos': {
+      id: '/campus-chaos'
+      path: '/campus-chaos'
+      fullPath: '/campus-chaos'
+      preLoaderRoute: typeof CampusChaosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/integralglobals': {
+      id: '/integralglobals'
+      path: '/integralglobals'
+      fullPath: '/integralglobals'
+      preLoaderRoute: typeof IntegralglobalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leadership': {
+      id: '/leadership'
+      path: '/leadership'
+      fullPath: '/leadership'
+      preLoaderRoute: typeof LeadershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/music': {
+      id: '/music'
+      path: '/music'
+      fullPath: '/music'
+      preLoaderRoute: typeof MusicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tutoring': {
+      id: '/tutoring'
+      path: '/tutoring'
+      fullPath: '/tutoring'
+      preLoaderRoute: typeof TutoringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/writing': {
+      id: '/writing'
+      path: '/writing'
+      fullPath: '/writing'
+      preLoaderRoute: typeof WritingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CampusChaosRoute: CampusChaosRoute,
+  ContactRoute: ContactRoute,
+  IntegralglobalsRoute: IntegralglobalsRoute,
+  LeadershipRoute: LeadershipRoute,
+  MusicRoute: MusicRoute,
+  TutoringRoute: TutoringRoute,
+  WritingRoute: WritingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
