@@ -41,7 +41,7 @@ export function Hero() {
           </div>
         </Reveal>
         <Reveal delay={150} className="mt-16">
-          <img src={hero.url} alt="Sir Integral of FUTO" className="aspect-[4/5] w-full rounded-3xl object-cover sm:aspect-[16/10]" />
+          <img src={hero.url} alt="Sir Integral of FUTO" className="aspect-[4/5] w-full rounded-3xl object-cover object-top sm:aspect-[16/10]" />
         </Reveal>
       </Container>
     </section>
@@ -331,10 +331,9 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
           <div>
-            <Brand />
-            <p className="mt-2 font-serif text-3xl text-on-dark">Sir Integral of FUTO</p>
-            <p className="mt-3 text-on-dark-muted">Mathematics. Media. <em className="font-serif text-teal">Meaningful</em> Impact.</p>
-            <p className="mt-6 label-caps text-on-dark-muted">Virtual · Monday to Saturday</p>
+            <p className="label-caps mb-5 text-teal">Sir Integral of FUTO</p>
+            <p className="text-on-dark-muted">Mathematics. Media. <em className="font-serif text-teal">Meaningful</em> Impact.</p>
+            <p className="mt-2 text-on-dark-muted">Virtual · Monday to Saturday</p>
           </div>
           <div>
             <p className="label-caps mb-5 text-teal">Contact</p>
