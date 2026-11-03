@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Each site section is its own route under src/routes; header and footer live in __root.tsx so they wrap every page. Why: the owner wants only Home on entry, other sections reached via the menu.

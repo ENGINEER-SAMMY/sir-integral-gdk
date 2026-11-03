@@ -15,3 +15,13 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 });
+
+describe("Site pages", () => {
+  it.each(["/about", "/tutoring", "/integralglobals", "/campus-chaos", "/writing", "/leadership", "/music", "/contact"])(
+    "matches a separate page for %s",
+    (path) => {
+      const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+      expect(router.matchRoutes(path).at(-1)?.routeId).toBe(path);
+    },
+  );
+});
