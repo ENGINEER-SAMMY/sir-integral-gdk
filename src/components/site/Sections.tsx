@@ -27,7 +27,7 @@ export function Hero() {
       <Container>
         <Reveal>
           <Label>Sir Integral of FUTO</Label>
-          <h1 className="text-[3.4rem] leading-[1] text-on-dark sm:text-7xl lg:text-[7.5rem]">
+          <h1 className="text-[2.9rem] leading-[1] text-on-dark sm:text-7xl lg:text-[7.5rem]">
             Mathematics.<br />Media.<br />
             <em className="text-teal">Meaningful</em><br />Impact.
           </h1>
