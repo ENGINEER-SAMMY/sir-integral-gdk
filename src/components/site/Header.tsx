@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { SitePath } from "./ui";
 
-export const NAV = [
-  ["home", "Home"],
-  ["about", "About"],
-  ["tutoring", "Tutoring"],
-  ["integralglobals", "INTEGRALGlobals"],
-  ["campus-chaos", "Campus Chaos"],
-  ["writing", "Writing"],
-  ["leadership", "Leadership"],
-  ["music", "Music"],
-  ["contact", "Contact"],
+export const NAV: readonly (readonly [SitePath, string])[] = [
+  ["/", "Home"],
+  ["/about", "About"],
+  ["/tutoring", "Tutoring"],
+  ["/integralglobals", "INTEGRALGlobals"],
+  ["/campus-chaos", "Campus Chaos"],
+  ["/writing", "Writing"],
+  ["/leadership", "Leadership"],
+  ["/music", "Music"],
+  ["/contact", "Contact"],
 ] as const;
 
 export function Brand() {
@@ -24,19 +26,6 @@ export function Brand() {
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("home");
-
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: "-45% 0px -50% 0px" },
-    );
-    NAV.forEach(([id]) => {
-      const el = document.getElementById(id);
-      if (el) io.observe(el);
-    });
-    return () => io.disconnect();
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -46,18 +35,21 @@ export function Header() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 bg-royal/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:px-10">
-          <a href="#home" onClick={() => setOpen(false)}>
+          <Link to="/" onClick={() => setOpen(false)}>
             <Brand />
-          </a>
+          </Link>
           <nav className="hidden items-center gap-6 xl:flex">
-            {NAV.map(([id, label]) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                className={cn("text-sm transition-colors hover:text-teal", active === id ? "text-teal" : "text-on-dark/80")}
+            {NAV.map(([to, label]) => (
+              <Link
+                key={to}
+                to={to}
+                activeOptions={{ exact: true }}
+                activeProps={{ className: "text-teal" }}
+                inactiveProps={{ className: "text-on-dark/80" }}
+                className="text-sm transition-colors hover:text-teal"
               >
                 {label}
-              </a>
+              </Link>
             ))}
           </nav>
           <button
@@ -77,29 +69,31 @@ export function Header() {
         )}
       >
         <nav className="flex flex-1 flex-col justify-center gap-1 overflow-y-auto">
-          {NAV.map(([id, label], i) => (
-            <a
-              key={id}
-              href={`#${id}`}
+          {NAV.map(([to, label], i) => (
+            <Link
+              key={to}
+              to={to}
               onClick={() => setOpen(false)}
+              activeOptions={{ exact: true }}
+              activeProps={{ className: "text-teal italic" }}
+              inactiveProps={{ className: "text-on-dark" }}
               style={{ transitionDelay: open ? `${i * 35}ms` : "0ms" }}
               className={cn(
                 "font-serif text-3xl py-2 transition-all duration-500 hover:text-teal",
                 open ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0",
-                active === id ? "text-teal italic" : "text-on-dark",
               )}
             >
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           onClick={() => setOpen(false)}
           className="mt-6 flex min-h-14 w-full items-center justify-center rounded-full bg-teal font-semibold text-indigo"
         >
           Book a Service
-        </a>
+        </Link>
       </div>
     </>
   );

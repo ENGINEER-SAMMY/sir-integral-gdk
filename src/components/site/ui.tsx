@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
 export const PHONE = "2348024891975";
@@ -39,26 +40,62 @@ export function Label({ children, tone = "teal" }: { children: ReactNode; tone?:
   );
 }
 
-type BtnProps = { href: string; children: ReactNode; variant?: "teal" | "outline" | "outlineDark"; external?: boolean; className?: string };
-export function Btn({ href, children, variant = "teal", external, className }: BtnProps) {
+type BtnProps = {
+  href?: string;
+  to?: SitePath;
+  children: ReactNode;
+  variant?: "teal" | "outline" | "outlineDark";
+  external?: boolean;
+  className?: string;
+};
+export function Btn({ href, to, children, variant = "teal", external, className }: BtnProps) {
   const styles = {
     teal: "bg-teal text-indigo hover:brightness-110 hover:shadow-[0_10px_30px_-10px_var(--teal)]",
     outline: "border border-on-dark/70 text-on-dark hover:bg-on-dark hover:text-indigo",
     outlineDark: "border border-indigo text-indigo hover:bg-indigo hover:text-on-dark",
   }[variant];
+  const cls = cn(
+    "inline-flex min-h-12 items-center justify-center rounded-full px-7 text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5",
+    styles,
+    className,
+  );
+  if (to) {
+    return (
+      <Link to={to} className={cls}>
+        {children}
+      </Link>
+    );
+  }
   return (
-    <a
-      href={href}
-      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={cn(
-        "inline-flex min-h-12 items-center justify-center rounded-full px-7 text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5",
-        styles,
-        className,
-      )}
-    >
+    <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className={cls}>
       {children}
     </a>
   );
+}
+
+export type SitePath =
+  | "/"
+  | "/about"
+  | "/tutoring"
+  | "/integralglobals"
+  | "/campus-chaos"
+  | "/writing"
+  | "/leadership"
+  | "/music"
+  | "/contact";
+
+export function pageHead(title: string, description: string) {
+  const full = `${title} — Sir Integral ∫ FUTO`;
+  return {
+    meta: [
+      { title: full },
+      { name: "description", content: description },
+      { property: "og:title", content: full },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  };
 }
 
 export function Container({ children, className }: { children: ReactNode; className?: string }) {
