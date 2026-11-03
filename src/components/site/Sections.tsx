@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpen, Brain, Feather, Globe, GraduationCap, Mail, Megaphone, Mic, Music, Newspaper, PenLine, Phone, Radio, Sparkles, Users, Youtube } from "lucide-react";
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import hero from "@/assets/hero-portrait.jpg.asset.json";
 import aboutImg from "@/assets/about-portrait.jpg.asset.json";
 import leaderImg from "@/assets/leadership.jpg.asset.json";
@@ -35,8 +36,8 @@ export function Hero() {
             Mathematics undergraduate at the Federal University of Technology, Owerri — mathematics tutor, writer, journalist, musician and creative professional.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Btn href="#contact">Book a Service</Btn>
-            <Btn href="#about" variant="outline">Learn About Me</Btn>
+            <Btn to="/contact">Book a Service</Btn>
+            <Btn to="/about" variant="outline">Learn About Me</Btn>
           </div>
         </Reveal>
         <Reveal delay={150} className="mt-16">
@@ -49,10 +50,10 @@ export function Hero() {
 
 export function Services() {
   const items = [
-    ["Mathematics & Tutoring", "Academic mathematics instruction and educational support.", "#tutoring"],
-    ["Journalism & Writing", "Articles, reporting and written work.", "#writing"],
-    ["Leadership & Community", "Initiatives, service and youth development.", "#leadership"],
-    ["Music & Entertainment", "Music, YouTube, acting and creative activities.", "#music"],
+    ["Mathematics & Tutoring", "Academic mathematics instruction and educational support.", "/tutoring"],
+    ["Journalism & Writing", "Articles, reporting and written work.", "/writing"],
+    ["Leadership & Community", "Initiatives, service and youth development.", "/leadership"],
+    ["Music & Entertainment", "Music, YouTube, acting and creative activities.", "/music"],
   ];
   return (
     <section className="bg-secondary py-24 sm:py-32">
@@ -67,9 +68,9 @@ export function Services() {
               <span className="mb-6 block h-0.5 w-12 bg-teal" />
               <h3 className="mb-3 text-3xl text-indigo">{t}</h3>
               <p className="mb-5 text-lg text-muted-foreground">{d}</p>
-              <a href={h} className="group inline-flex items-center gap-2 font-semibold text-indigo underline underline-offset-4 decoration-teal">
+              <Link to={h as "/tutoring"} className="group inline-flex items-center gap-2 font-semibold text-indigo underline underline-offset-4 decoration-teal">
                 Learn more <span className="transition-transform group-hover:translate-x-1">→</span>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>
@@ -124,9 +125,8 @@ export function About() {
 export function Tutoring() {
   return (
     <section id="tutoring">
-      <div className="bg-indigo pb-24 pt-8 sm:pb-32">
+      <div className="bg-indigo py-24 sm:py-32">
         <Container>
-          <div className="mb-16 h-px bg-on-dark/10" />
           <Reveal>
             <Label>Mathematics Tutoring</Label>
             <h2 className={`${H2} max-w-3xl text-on-dark`}>Making mathematics <em className="text-teal">make sense.</em></h2>
@@ -247,9 +247,8 @@ export function Writing() {
 
 export function Leadership() {
   return (
-    <section id="leadership" className="bg-secondary pb-24 sm:pb-32">
+    <section id="leadership" className="bg-secondary py-24 sm:py-32">
       <Container>
-        <div className="mb-20 h-px bg-border" />
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <img src={leaderImg.url} alt="Sir Integral in leadership" className="aspect-[4/5] w-full rounded-3xl object-cover" />
