@@ -10,6 +10,6 @@
 <!-- LOVABLE:END -->
 
 - Each site section is its own route under src/routes; header and footer live in __root.tsx so they wrap every page. Why: the owner wants only Home on entry, other sections reached via the menu.
-- Every public page is listed in `PAGES` in vite.config.ts and prerendered to static HTML; add new routes there. Why: the site is also hosted on GitHub Pages, which only serves static files.
+- Every public page is listed in `PAGES` in vite.config.ts and prerendered to static HTML (outside Lovable the build writes it to .output/public, which the Pages workflow deploys); add new routes there. Why: the site is also hosted on GitHub Pages, which only serves static files.
 - Images are real files in src/assets imported by Vite, not Lovable asset pointers. Why: Lovable asset URLs only resolve on Lovable hosting.
 - URLs must respect `import.meta.env.BASE_URL` (set from `BASE_PATH` in the GitHub Pages workflow) and the router uses `trailingSlash: "always"`. Why: GitHub Pages serves the site from /<repo>/ and pages as <page>/index.html.
