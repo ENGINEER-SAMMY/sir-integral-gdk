@@ -43,10 +43,6 @@ jobs:
             test -f ".output/public/${page:+$page/}index.html" || { echo "Missing page: /$page"; exit 1; }
           done
 
-      - name: Add 404 page
-        # Unknown addresses load the app, which then shows its "Page not found" screen.
-        run: cp .output/public/index.html .output/public/404.html
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
