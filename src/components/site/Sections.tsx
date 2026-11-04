@@ -8,6 +8,7 @@ import { Brand } from "./Header";
 import { Btn, Container, EMAIL, Label, PHONE, Reveal, wa } from "./ui";
 
 const CHANNEL = "https://whatsapp.com/channel/0029VbBhLsGDJ6H9Y4lQKJ1H";
+const YOUTUBE = "https://www.youtube.com/@GDK_MUSIC_OFFICIAL";
 const H2 = "font-serif text-4xl leading-[1.08] sm:text-5xl lg:text-6xl";
 
 function Card({ icon, title, children, action }: { icon?: ReactNode; title: string; children: ReactNode; action?: ReactNode }) {
@@ -271,7 +272,7 @@ export function Leadership() {
 
 export function MusicSection() {
   const cards = [
-    [<Youtube size={20} />, "Music", "Original music shared on the GDK Music Official YouTube channel.", "Watch on YouTube", "#"],
+    [<Youtube size={20} />, "Music", "Original music shared on the GDK Music Official YouTube channel.", "Watch on YouTube", YOUTUBE],
     [<Mic size={20} />, "Acting & MC Bookings", "Acting roles or a professional Master of Ceremonies.", "Enquire on WhatsApp", wa("Hello Sir Integral, I'd like to enquire about acting / MC bookings.")],
     [<Megaphone size={20} />, "Social Influencing & Collaborations", "Brand promotion and creative campaigns.", "Enquire on WhatsApp", wa("Hello Sir Integral, I'd like to discuss a brand collaboration.")],
     [<Music size={20} />, "Music Performances", "Live guitar and band performances for events, shows and celebrations.", "Book a Performance", wa("Hello Sir Integral, I'd like to book a music performance.")],
@@ -325,7 +326,14 @@ export function Contact() {
 }
 
 export function Footer() {
-  const socials: [string, string, boolean][] = [["Instagram", "#", false], ["YouTube", "#", false], ["WhatsApp Channel", CHANNEL, true], ["LinkedIn", "#", false], ["Facebook", "#", false]];
+  const socials: [string, string, boolean][] = [
+    ["Instagram", "https://www.instagram.com/sir_integral_of_futo?xtok=MWhhMDNscGZ5azZhNg==", true],
+    ["TikTok", "https://tiktok.com/@sir_integral_of_futo", true],
+    ["YouTube", YOUTUBE, true],
+    ["WhatsApp Channel", CHANNEL, true],
+    ["LinkedIn", "https://www.linkedin.com/in/sir-integral-of-futo-959553445?utm_source=share_via&utm_content=profile&utm_medium=member_android", true],
+    ["Facebook", "https://www.facebook.com/godwindaniel632", true],
+  ];
   return (
     <footer className="bg-indigo pt-20 pb-10">
       <Container>
