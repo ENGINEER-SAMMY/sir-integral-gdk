@@ -6,14 +6,14 @@ import type { SitePath } from "./ui";
 
 export const NAV: readonly (readonly [SitePath, string])[] = [
   ["/", "Home"],
-  ["/about", "About"],
-  ["/tutoring", "Tutoring"],
-  ["/integralglobals", "INTEGRALGlobals"],
-  ["/campus-chaos", "Campus Chaos"],
-  ["/writing", "Writing"],
-  ["/leadership", "Leadership"],
-  ["/music", "Music"],
-  ["/contact", "Contact"],
+  ["/about/", "About"],
+  ["/tutoring/", "Tutoring"],
+  ["/integralglobals/", "INTEGRALGlobals"],
+  ["/campus-chaos/", "Campus Chaos"],
+  ["/writing/", "Writing"],
+  ["/leadership/", "Leadership"],
+  ["/music/", "Music"],
+  ["/contact/", "Contact"],
 ] as const;
 
 export function Brand() {
@@ -88,7 +88,7 @@ export function Header() {
           ))}
         </nav>
         <Link
-          to="/contact"
+          to="/contact/"
           onClick={() => setOpen(false)}
           className="mt-6 flex min-h-14 w-full items-center justify-center rounded-full bg-teal font-semibold text-indigo"
         >

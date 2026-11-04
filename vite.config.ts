@@ -6,10 +6,30 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Every public page. Each is rendered to static HTML at build time.
+const PAGES = [
+  "/",
+  "/about",
+  "/tutoring",
+  "/integralglobals",
+  "/campus-chaos",
+  "/writing",
+  "/leadership",
+  "/music",
+  "/contact",
+];
+
+// GitHub Pages serves this site from /<repo-name>/. The deploy workflow sets
+// BASE_PATH; Lovable hosting and local dev keep the root "/".
+const base = process.env["BASE_PATH"] || "/";
+
 export default defineConfig({
+  vite: { base },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    pages: PAGES.map((path) => ({ path })),
+    prerender: { enabled: true, autoStaticPathsDiscovery: false },
   },
 });

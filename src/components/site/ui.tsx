@@ -75,14 +75,14 @@ export function Btn({ href, to, children, variant = "teal", external, className 
 
 export type SitePath =
   | "/"
-  | "/about"
-  | "/tutoring"
-  | "/integralglobals"
-  | "/campus-chaos"
-  | "/writing"
-  | "/leadership"
-  | "/music"
-  | "/contact";
+  | "/about/"
+  | "/tutoring/"
+  | "/integralglobals/"
+  | "/campus-chaos/"
+  | "/writing/"
+  | "/leadership/"
+  | "/music/"
+  | "/contact/";
 
 export function pageHead(title: string, description: string) {
   const full = `${title} — Sir Integral ∫ FUTO`;

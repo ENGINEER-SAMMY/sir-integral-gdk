@@ -1,9 +1,9 @@
 import { ArrowRight, BookOpen, Brain, Feather, Globe, GraduationCap, Mail, Megaphone, Mic, Music, Newspaper, PenLine, Phone, Radio, Sparkles, Users, Youtube } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import hero from "@/assets/hero-portrait.jpg.asset.json";
-import aboutImg from "@/assets/about-portrait.jpg.asset.json";
-import leaderImg from "@/assets/leadership.jpg.asset.json";
+import heroSrc from "@/assets/hero-portrait.jpg";
+import aboutSrc from "@/assets/about-portrait.jpg";
+import leaderSrc from "@/assets/leadership.jpg";
 import { Brand } from "./Header";
 import { Btn, Container, EMAIL, Label, PHONE, Reveal, wa } from "./ui";
 
@@ -37,12 +37,12 @@ export function Hero() {
             Mathematics undergraduate at the Federal University of Technology, Owerri — mathematics tutor, writer, journalist, musician and creative professional.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Btn to="/contact">Book a Service</Btn>
-            <Btn to="/about" variant="outline">Learn About Me</Btn>
+            <Btn to="/contact/">Book a Service</Btn>
+            <Btn to="/about/" variant="outline">Learn About Me</Btn>
           </div>
         </Reveal>
         <Reveal delay={150} className="mt-16">
-          <img src={hero.url} alt="Sir Integral of FUTO" className="aspect-[4/5] w-full rounded-3xl object-cover object-top sm:aspect-[16/10]" />
+          <img src={heroSrc} alt="Sir Integral of FUTO" className="aspect-[4/5] w-full rounded-3xl object-cover object-top sm:aspect-[16/10]" />
         </Reveal>
       </Container>
     </section>
@@ -51,10 +51,10 @@ export function Hero() {
 
 export function Services() {
   const items = [
-    ["Mathematics & Tutoring", "Academic mathematics instruction and educational support.", "/tutoring"],
-    ["Journalism & Writing", "Articles, reporting and written work.", "/writing"],
-    ["Leadership & Community", "Initiatives, service and youth development.", "/leadership"],
-    ["Music & Entertainment", "Music, YouTube, acting and creative activities.", "/music"],
+    ["Mathematics & Tutoring", "Academic mathematics instruction and educational support.", "/tutoring/"],
+    ["Journalism & Writing", "Articles, reporting and written work.", "/writing/"],
+    ["Leadership & Community", "Initiatives, service and youth development.", "/leadership/"],
+    ["Music & Entertainment", "Music, YouTube, acting and creative activities.", "/music/"],
   ];
   return (
     <section className="bg-secondary py-24 sm:py-32">
@@ -69,7 +69,7 @@ export function Services() {
               <span className="mb-6 block h-0.5 w-12 bg-teal" />
               <h3 className="mb-3 text-3xl text-indigo">{t}</h3>
               <p className="mb-5 text-lg text-muted-foreground">{d}</p>
-              <Link to={h as "/tutoring"} className="group inline-flex items-center gap-2 font-semibold text-indigo underline underline-offset-4 decoration-teal">
+              <Link to={h as "/tutoring/"} className="group inline-flex items-center gap-2 font-semibold text-indigo underline underline-offset-4 decoration-teal">
                 Learn more <span className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </Reveal>
@@ -99,7 +99,7 @@ export function About() {
         </Reveal>
         <div className="mt-14 grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-20">
           <Reveal>
-            <img src={aboutImg.url} alt="Sir Integral portrait" className="aspect-[4/5] w-full rounded-3xl object-cover lg:sticky lg:top-24" />
+            <img src={aboutSrc} alt="Sir Integral portrait" className="aspect-[4/5] w-full rounded-3xl object-cover lg:sticky lg:top-24" />
           </Reveal>
           <Reveal delay={120}>
             <div className="space-y-6 text-lg leading-relaxed text-on-dark-muted">
@@ -252,7 +252,7 @@ export function Leadership() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <img src={leaderImg.url} alt="Sir Integral in leadership" className="aspect-[4/5] w-full rounded-3xl object-cover" />
+            <img src={leaderSrc} alt="Sir Integral in leadership" className="aspect-[4/5] w-full rounded-3xl object-cover" />
           </Reveal>
           <div>
             <Reveal>
