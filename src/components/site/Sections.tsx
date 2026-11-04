@@ -1,9 +1,9 @@
 import { ArrowRight, BookOpen, Brain, Feather, Globe, GraduationCap, Mail, Megaphone, Mic, Music, Newspaper, PenLine, Phone, Radio, Sparkles, Users, Youtube } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import hero from "@/assets/hero-portrait.jpg.asset.json";
-import aboutImg from "@/assets/about-portrait.jpg.asset.json";
-import leaderImg from "@/assets/leadership.jpg.asset.json";
+import heroSrc from "@/assets/hero-portrait.jpg";
+import aboutSrc from "@/assets/about-portrait.jpg";
+import leaderSrc from "@/assets/leadership.jpg";
 import { Brand } from "./Header";
 import { Btn, Container, EMAIL, Label, PHONE, Reveal, wa } from "./ui";
 
@@ -42,7 +42,7 @@ export function Hero() {
           </div>
         </Reveal>
         <Reveal delay={150} className="mt-16">
-          <img src={hero.url} alt="Sir Integral of FUTO" className="aspect-[4/5] w-full rounded-3xl object-cover object-top sm:aspect-[16/10]" />
+          <img src={heroSrc} alt="Sir Integral of FUTO" className="aspect-[4/5] w-full rounded-3xl object-cover object-top sm:aspect-[16/10]" />
         </Reveal>
       </Container>
     </section>
@@ -99,7 +99,7 @@ export function About() {
         </Reveal>
         <div className="mt-14 grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-20">
           <Reveal>
-            <img src={aboutImg.url} alt="Sir Integral portrait" className="aspect-[4/5] w-full rounded-3xl object-cover lg:sticky lg:top-24" />
+            <img src={aboutSrc} alt="Sir Integral portrait" className="aspect-[4/5] w-full rounded-3xl object-cover lg:sticky lg:top-24" />
           </Reveal>
           <Reveal delay={120}>
             <div className="space-y-6 text-lg leading-relaxed text-on-dark-muted">
@@ -252,7 +252,7 @@ export function Leadership() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <img src={leaderImg.url} alt="Sir Integral in leadership" className="aspect-[4/5] w-full rounded-3xl object-cover" />
+            <img src={leaderSrc} alt="Sir Integral in leadership" className="aspect-[4/5] w-full rounded-3xl object-cover" />
           </Reveal>
           <div>
             <Reveal>
