@@ -37,8 +37,8 @@ export function Hero() {
             Mathematics undergraduate at the Federal University of Technology, Owerri — mathematics tutor, writer, journalist, musician and creative professional.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Btn to="/contact">Book a Service</Btn>
-            <Btn to="/about" variant="outline">Learn About Me</Btn>
+            <Btn to="/contact/">Book a Service</Btn>
+            <Btn to="/about/" variant="outline">Learn About Me</Btn>
           </div>
         </Reveal>
         <Reveal delay={150} className="mt-16">
@@ -51,10 +51,10 @@ export function Hero() {
 
 export function Services() {
   const items = [
-    ["Mathematics & Tutoring", "Academic mathematics instruction and educational support.", "/tutoring"],
-    ["Journalism & Writing", "Articles, reporting and written work.", "/writing"],
-    ["Leadership & Community", "Initiatives, service and youth development.", "/leadership"],
-    ["Music & Entertainment", "Music, YouTube, acting and creative activities.", "/music"],
+    ["Mathematics & Tutoring", "Academic mathematics instruction and educational support.", "/tutoring/"],
+    ["Journalism & Writing", "Articles, reporting and written work.", "/writing/"],
+    ["Leadership & Community", "Initiatives, service and youth development.", "/leadership/"],
+    ["Music & Entertainment", "Music, YouTube, acting and creative activities.", "/music/"],
   ];
   return (
     <section className="bg-secondary py-24 sm:py-32">
@@ -69,7 +69,7 @@ export function Services() {
               <span className="mb-6 block h-0.5 w-12 bg-teal" />
               <h3 className="mb-3 text-3xl text-indigo">{t}</h3>
               <p className="mb-5 text-lg text-muted-foreground">{d}</p>
-              <Link to={h as "/tutoring"} className="group inline-flex items-center gap-2 font-semibold text-indigo underline underline-offset-4 decoration-teal">
+              <Link to={h as "/tutoring/"} className="group inline-flex items-center gap-2 font-semibold text-indigo underline underline-offset-4 decoration-teal">
                 Learn more <span className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </Reveal>

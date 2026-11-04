@@ -21,7 +21,7 @@ const PAGES = [
 
 // GitHub Pages serves this site from /<repo-name>/. The deploy workflow sets
 // BASE_PATH; Lovable hosting and local dev keep the root "/".
-const base = process.env.BASE_PATH || "/";
+const base = process.env["BASE_PATH"] || "/";
 
 export default defineConfig({
   vite: { base },
