@@ -84,17 +84,25 @@ export type SitePath =
   | "/music/"
   | "/contact/";
 
-export function pageHead(title: string, description: string) {
-  const full = `${title} — Sir Integral ∫ FUTO`;
+export const SITE_URL = "https://sir-integral.com";
+
+export function pageHead(title: string, description: string, path: SitePath) {
+  const url = `${SITE_URL}${path}`;
   return {
     meta: [
-      { title: full },
+      { title },
       { name: "description", content: description },
-      { property: "og:title", content: full },
+      { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
+      { property: "og:type", content: path === "/" ? "website" : "profile" },
+      { property: "og:url", content: url },
+      { property: "og:site_name", content: "Sir Integral ∫ FUTO" },
+      { property: "og:locale", content: "en_NG" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ],
+    links: [{ rel: "canonical", href: url }],
   };
 }
 

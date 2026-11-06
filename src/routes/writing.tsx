@@ -3,7 +3,7 @@ import { Writing } from "@/components/site/Sections";
 import { pageHead } from "@/components/site/ui";
 
 export const Route = createFileRoute("/writing")({
-  head: () => pageHead("Writing & Journalism", "Articles, campus reporting and written work by student journalist Sir Integral."),
+  head: () => pageHead("Writing & Journalism | Sir Integral of FUTO", "Articles, campus reporting and written work by student journalist Sir Integral of FUTO.", "/writing/"),
   component: PageWriting,
 });
 
