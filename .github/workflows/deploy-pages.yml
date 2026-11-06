@@ -32,7 +32,7 @@ jobs:
       - name: Build static site
         # The site is served from https://<user>.github.io/<repo-name>/
         env:
-          BASE_PATH: /${{ github.event.repository.name }}/
+          BASE_PATH: /
         run: bun run build
 
       # Outside Lovable, the build writes the static site (prerendered HTML,
