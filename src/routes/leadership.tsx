@@ -3,7 +3,7 @@ import { Leadership } from "@/components/site/Sections";
 import { pageHead } from "@/components/site/ui";
 
 export const Route = createFileRoute("/leadership")({
-  head: () => pageHead("Leadership & Community", "Leadership, community service and youth development with Sir Integral of FUTO."),
+  head: () => pageHead("Leadership & Community | Sir Integral FUTO", "Leadership, community service, Rotaract and youth development with Sir Integral of FUTO.", "/leadership/"),
   component: PageLeadership,
 });
 
