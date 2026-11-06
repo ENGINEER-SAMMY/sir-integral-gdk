@@ -83,7 +83,7 @@ export function Services() {
 export function About() {
   const interests = ["Mathematics Tutor", "Mathematics Undergraduate at FUTO", "Campus Media & Student Information", "Student Journalist", "Rotaract Member"];
   const paras = [
-    "I am a Mathematics undergraduate at the Federal University of Technology, Owerri (FUTO), with a strong interest in teaching, student development, campus media, and community engagement.",
+    "I am Sir Integral of FUTO, also known as Minister GDK. I am a Mathematics undergraduate at the Federal University of Technology, Owerri (FUTO), with a strong interest in teaching, student development, campus media, and community engagement.",
     "As a Mathematics tutor, I help fellow students understand mathematical concepts and approach their studies with greater confidence. Through my mathematics tutorial community on WhatsApp, I create a space where students can learn, ask questions, and support one another academically.",
     "I also run Campus Chaos, a WhatsApp channel focused primarily on FUTO. The channel shares campus updates, useful information, tutorial announcements, and other developments relevant to students.",
     "Beyond academics and campus media, I am involved in Rotaract, campus journalism, and student advocacy. I also play the guitar and participate in band performances, which allow me to express my creative side.",
@@ -99,7 +99,7 @@ export function About() {
         </Reveal>
         <div className="mt-14 grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-20">
           <Reveal>
-            <img src={aboutSrc} alt="Sir Integral portrait" className="aspect-[4/5] w-full rounded-3xl object-cover lg:sticky lg:top-24" />
+            <img src={aboutSrc} alt="Sir Integral of FUTO (Minister GDK) portrait" className="aspect-[4/5] w-full rounded-3xl object-cover lg:sticky lg:top-24" />
           </Reveal>
           <Reveal delay={120}>
             <div className="space-y-6 text-lg leading-relaxed text-on-dark-muted">

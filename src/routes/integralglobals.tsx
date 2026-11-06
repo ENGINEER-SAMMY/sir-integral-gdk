@@ -3,7 +3,7 @@ import { IntegralGlobals } from "@/components/site/Sections";
 import { pageHead } from "@/components/site/ui";
 
 export const Route = createFileRoute("/integralglobals")({
-  head: () => pageHead("INTEGRALGlobals", "INTEGRALGlobals — the umbrella for Sir Integral's educational, media and creative initiatives."),
+  head: () => pageHead("INTEGRALGlobals | Sir Integral of FUTO", "INTEGRALGlobals is the umbrella for the educational, media and creative initiatives of Sir Integral.", "/integralglobals/"),
   component: PageIntegralGlobals,
 });
 
