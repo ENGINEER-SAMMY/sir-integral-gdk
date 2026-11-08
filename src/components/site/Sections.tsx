@@ -4,6 +4,9 @@ import { Link } from "@tanstack/react-router";
 import heroSrc from "@/assets/hero-portrait.jpg";
 import aboutSrc from "@/assets/about-portrait.jpg";
 import leaderSrc from "@/assets/leadership.jpg";
+import acting1Src from "@/assets/acting-1.jpg";
+import acting2Src from "@/assets/acting-2.jpg";
+import acting3Src from "@/assets/acting-3.jpg";
 import { Brand } from "./Header";
 import { Btn, Container, EMAIL, Label, PHONE, Reveal, wa } from "./ui";
 
