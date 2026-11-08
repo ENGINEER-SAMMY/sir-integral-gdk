@@ -95,7 +95,7 @@ export function About() {
       <Container>
         <Reveal>
           <Label>About</Label>
-          <h2 className="text-5xl leading-[1.05] text-on-dark sm:text-6xl lg:text-7xl">Hello, I'm <em className="text-teal">Sir Integral.</em></h2>
+          <h2 className="text-5xl leading-[1.05] text-on-dark sm:text-6xl lg:text-7xl">Hello, I'm <em className="text-teal">Sir Integral</em> a.k.a <em className="text-teal">Minister GDK</em></h2>
         </Reveal>
         <div className="mt-14 grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-20">
           <Reveal>
