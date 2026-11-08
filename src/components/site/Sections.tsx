@@ -276,9 +276,13 @@ export function Leadership() {
 export function MusicSection() {
   const cards = [
     [<Youtube size={20} />, "Music", "Original music shared on the GDK Music Official YouTube channel.", "Watch on YouTube", YOUTUBE],
-    [<Mic size={20} />, "Acting & MC Bookings", "Acting roles or a professional Master of Ceremonies.", "Enquire on WhatsApp", wa("Hello Sir Integral, I'd like to enquire about acting / MC bookings.")],
     [<Megaphone size={20} />, "Social Influencing & Collaborations", "Brand promotion and creative campaigns.", "Enquire on WhatsApp", wa("Hello Sir Integral, I'd like to discuss a brand collaboration.")],
     [<Music size={20} />, "Music Performances", "Live guitar and band performances for events, shows and celebrations.", "Book a Performance", wa("Hello Sir Integral, I'd like to book a music performance.")],
+  ] as const;
+  const actingPhotos = [
+    [acting1Src, "Integral Act House performing a stage drama in traditional costume"],
+    [acting2Src, "Sir Integral acting on stage with Integral Act House"],
+    [acting3Src, "Integral Act House stage performance"],
   ] as const;
   return (
     <section id="music" className="bg-indigo py-24 sm:py-32">
