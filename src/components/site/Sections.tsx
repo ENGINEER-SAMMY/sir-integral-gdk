@@ -9,6 +9,7 @@ import acting2Src from "@/assets/acting-2.jpg";
 import acting3Src from "@/assets/acting-3.jpg";
 import { Brand } from "./Header";
 import { Btn, Container, EMAIL, Label, PHONE, Reveal, wa } from "./ui";
+import { LightboxImage } from "./ImageLightbox";
 
 const CHANNEL = "https://whatsapp.com/channel/0029VbBhLsGDJ6H9Y4lQKJ1H";
 const YOUTUBE = "https://www.youtube.com/@GDK_MUSIC_OFFICIAL";
@@ -45,7 +46,7 @@ export function Hero() {
           </div>
         </Reveal>
         <Reveal delay={150} className="mt-16">
-          <img src={heroSrc} alt="Sir Integral of FUTO" className="aspect-[4/5] w-full rounded-3xl object-cover object-top sm:aspect-[16/10]" />
+          <LightboxImage src={heroSrc} alt="Sir Integral of FUTO" className="aspect-[4/5] w-full rounded-3xl object-cover object-top sm:aspect-[16/10]" />
         </Reveal>
       </Container>
     </section>
@@ -102,7 +103,7 @@ export function About() {
         </Reveal>
         <div className="mt-14 grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-20">
           <Reveal>
-            <img src={aboutSrc} alt="Sir Integral of FUTO (Minister GDK) portrait" className="aspect-[4/5] w-full rounded-3xl object-cover lg:sticky lg:top-24" />
+            <LightboxImage src={aboutSrc} alt="Sir Integral of FUTO (Minister GDK) portrait" className="aspect-[4/5] w-full rounded-3xl object-cover lg:sticky lg:top-24" />
           </Reveal>
           <Reveal delay={120}>
             <div className="space-y-6 text-lg leading-relaxed text-on-dark-muted">
@@ -255,7 +256,7 @@ export function Leadership() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <img src={leaderSrc} alt="Sir Integral in leadership" className="aspect-[4/5] w-full rounded-3xl object-cover" />
+            <LightboxImage src={leaderSrc} alt="Sir Integral in leadership" className="aspect-[4/5] w-full rounded-3xl object-cover" />
           </Reveal>
           <div>
             <Reveal>
@@ -307,7 +308,7 @@ export function MusicSection() {
               </p>
               <div className="mt-6 grid grid-cols-3 gap-2">
                 {actingPhotos.map(([src, alt]) => (
-                  <img key={src} src={src} alt={alt} className="aspect-[3/4] w-full rounded-xl object-cover" />
+                  <LightboxImage key={src} src={src} alt={alt} className="aspect-[3/4] w-full rounded-xl object-cover" />
                 ))}
               </div>
               <div className="flex-1" />
