@@ -310,7 +310,7 @@ export function MusicSection() {
                   <img key={src} src={src} alt={alt} className="aspect-[3/4] w-full rounded-xl object-cover" />
                 ))}
               </div>
-              <div className="mt-7 flex-1" />
+              <div className="flex-1" />
               <div className="mt-7"><Btn href={wa("Hello Sir Integral, I'd like to enquire about acting / MC bookings.")} external>Enquire on WhatsApp</Btn></div>
             </div>
           </Reveal>
