@@ -4,6 +4,9 @@ import { Link } from "@tanstack/react-router";
 import heroSrc from "@/assets/hero-portrait.jpg";
 import aboutSrc from "@/assets/about-portrait.jpg";
 import leaderSrc from "@/assets/leadership.jpg";
+import acting1Src from "@/assets/acting-1.jpg";
+import acting2Src from "@/assets/acting-2.jpg";
+import acting3Src from "@/assets/acting-3.jpg";
 import { Brand } from "./Header";
 import { Btn, Container, EMAIL, Label, PHONE, Reveal, wa } from "./ui";
 
@@ -273,9 +276,13 @@ export function Leadership() {
 export function MusicSection() {
   const cards = [
     [<Youtube size={20} />, "Music", "Original music shared on the GDK Music Official YouTube channel.", "Watch on YouTube", YOUTUBE],
-    [<Mic size={20} />, "Acting & MC Bookings", "Acting roles or a professional Master of Ceremonies.", "Enquire on WhatsApp", wa("Hello Sir Integral, I'd like to enquire about acting / MC bookings.")],
     [<Megaphone size={20} />, "Social Influencing & Collaborations", "Brand promotion and creative campaigns.", "Enquire on WhatsApp", wa("Hello Sir Integral, I'd like to discuss a brand collaboration.")],
     [<Music size={20} />, "Music Performances", "Live guitar and band performances for events, shows and celebrations.", "Book a Performance", wa("Hello Sir Integral, I'd like to book a music performance.")],
+  ] as const;
+  const actingPhotos = [
+    [acting1Src, "Integral Act House performing a stage drama in traditional costume"],
+    [acting2Src, "Sir Integral acting on stage with Integral Act House"],
+    [acting3Src, "Integral Act House stage performance"],
   ] as const;
   return (
     <section id="music" className="bg-indigo py-24 sm:py-32">
@@ -286,8 +293,29 @@ export function MusicSection() {
           <p className="mt-6 max-w-xl text-lg text-on-dark-muted">Music, acting and professional Master of Ceremonies services.</p>
         </Reveal>
         <div className="mt-16 grid gap-6 sm:grid-cols-2">
-          {cards.map(([icon, t, d, cta, href], i) => (
-            <Reveal key={t} delay={i * 80}>
+          <Reveal>
+            <Card icon={<Youtube size={20} />} title={cards[0][1]} action={<Btn href={cards[0][4]} external>{cards[0][3]}</Btn>}>{cards[0][2]}</Card>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="lift flex h-full flex-col rounded-2xl border border-border bg-card p-7 sm:p-8">
+              <div className="mb-6 grid h-11 w-11 place-items-center rounded-full bg-accent text-teal"><Mic size={20} /></div>
+              <span className="mb-5 block h-0.5 w-10 bg-teal" />
+              <h3 className="mb-3 text-2xl text-indigo">Acting & MC Bookings</h3>
+              <p className="leading-relaxed text-muted-foreground">Acting roles or a professional Master of Ceremonies.</p>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Sir Integral performs with <span className="font-semibold text-indigo">Integral Act House</span>, his acting crew — a drama team bringing the same energy he brings to campus media and the stage: storytelling that entertains, informs and connects with young audiences.
+              </p>
+              <div className="mt-6 grid grid-cols-3 gap-2">
+                {actingPhotos.map(([src, alt]) => (
+                  <img key={src} src={src} alt={alt} className="aspect-[3/4] w-full rounded-xl object-cover" />
+                ))}
+              </div>
+              <div className="flex-1" />
+              <div className="mt-7"><Btn href={wa("Hello Sir Integral, I'd like to enquire about acting / MC bookings.")} external>Enquire on WhatsApp</Btn></div>
+            </div>
+          </Reveal>
+          {cards.slice(1).map(([icon, t, d, cta, href], i) => (
+            <Reveal key={t} delay={(i + 2) * 80}>
               <Card icon={icon} title={t} action={<Btn href={href} external>{cta}</Btn>}>{d}</Card>
             </Reveal>
           ))}

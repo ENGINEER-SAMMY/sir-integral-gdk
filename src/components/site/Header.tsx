@@ -12,7 +12,7 @@ export const NAV: readonly (readonly [SitePath, string])[] = [
   ["/campus-chaos/", "Campus Chaos"],
   ["/writing/", "Writing"],
   ["/leadership/", "Leadership"],
-  ["/music/", "Music"],
+  ["/music/", "Music & Entertainment"],
   ["/contact/", "Contact"],
 ] as const;
 
