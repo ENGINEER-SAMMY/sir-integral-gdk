@@ -132,3 +132,50 @@ h1,h2,h3,h4 { font-family: var(--font-serif); }
   transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
   &:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px color-mix(in oklab, var(--indigo) 45%, transparent); border-color: var(--teal); }
 }
+
+.expandable-photo { cursor: zoom-in; }
+.expandable-photo:focus-visible { outline: 3px solid var(--teal); outline-offset: 4px; }
+.image-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  background: color-mix(in oklab, var(--indigo) 96%, transparent);
+}
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: max(4.5rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+  outline: none;
+}
+.image-lightbox-photo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - max(4.5rem, env(safe-area-inset-top)) - max(1rem, env(safe-area-inset-bottom)));
+  object-fit: contain;
+  min-width: 0;
+  min-height: 0;
+}
+.image-lightbox-close {
+  position: absolute;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.image-lightbox-backdrop[data-state="open"], .image-lightbox[data-state="open"] { animation: lightbox-fade-in 180ms ease-out; }
+.image-lightbox-backdrop[data-state="closed"], .image-lightbox[data-state="closed"] { animation: lightbox-fade-out 180ms ease-in; }
+.image-lightbox[data-state="open"] .image-lightbox-photo { animation: lightbox-zoom-in 180ms ease-out; }
+.image-lightbox[data-state="closed"] .image-lightbox-photo { animation: lightbox-zoom-out 180ms ease-in; }
+@keyframes lightbox-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes lightbox-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes lightbox-zoom-in { from { transform: scale(.96); } to { transform: scale(1); } }
+@keyframes lightbox-zoom-out { from { transform: scale(1); } to { transform: scale(.96); } }
+@media (prefers-reduced-motion: reduce) {
+  .image-lightbox-backdrop, .image-lightbox, .image-lightbox .image-lightbox-photo { animation: none !important; }
+}

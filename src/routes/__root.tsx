@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Sections";
+import { ImageLightboxProvider } from "@/components/site/ImageLightbox";
 
 function NotFoundComponent() {
   return (
@@ -121,12 +122,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ImageLightboxProvider>
       <Header />
       <main>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>
       <Footer />
+      </ImageLightboxProvider>
     </QueryClientProvider>
   );
 }
