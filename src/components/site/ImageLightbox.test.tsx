@@ -11,8 +11,9 @@ function setup() {
 
 describe("Site image expansion", () => {
   it("opens the original image and locks background scrolling", () => {
-    fireEvent.click(setup());
-    expect(screen.getByRole("img", { name: "Portrait" })).toHaveAttribute("src", "/portrait.jpg");
+    const trigger = setup() as HTMLImageElement;
+    fireEvent.click(trigger);
+    expect(screen.getByRole("img", { name: "Portrait" })).toHaveAttribute("src", trigger.src);
     expect(document.body).toHaveAttribute("data-scroll-locked");
   });
 
